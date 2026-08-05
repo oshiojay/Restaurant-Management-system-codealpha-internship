@@ -13,7 +13,13 @@ exports.createUser = async (req, res) => {
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
 
-        const otp = otpGenerator.generate(6, { upperCase: false, specialChars: false, alphabets: false })
+        const otp = otpGenerator.generate(6, {
+            digits: true,
+            lowerCaseAlphabets: false,
+            upperCaseAlphabets: false,
+            specialChars: false
+        })
+        console.log("OTP generated:", otp)
         const otpExpire = Date.now() + (1000 * 60 * 5)
 
         const newUser = new userModel({
@@ -83,7 +89,12 @@ exports.resendOtp = async (req, res) => {
                 message: 'User not found' 
             })
         }
-        const otp = otpGenerator.generate(6, { upperCase: false, specialChars: false, alphabets: false })
+        const otp = otpGenerator.generate(6, {
+            digits: true,
+            lowerCaseAlphabets: false,
+            upperCaseAlphabets: false,
+            specialChars: false
+        })
         const otpExpire = Date.now() + (1000 * 60 * 5)
         user.otp = otp
         user.otpExpire = otpExpire
