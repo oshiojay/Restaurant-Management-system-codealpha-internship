@@ -31,7 +31,7 @@ const userSchema = new Schema({
             return Date.now() + (1000*60*5)
         }
     }
-}, timestamps = true)
+}, {timestamps: true})
 
 const userModel = mongoose.model('User', userSchema)
 

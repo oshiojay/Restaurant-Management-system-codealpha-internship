@@ -4,6 +4,7 @@ const PORT = process.env.PORT
 
 
 const userRoutes = require('./routes/user')
+const menuRoutes = require('./routes/menu')
 
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 
 
 app.use('/api/v1/user', userRoutes)
+app.use('/api/v1/menu', menuRoutes)
 
 const mongoose = require('mongoose')
 

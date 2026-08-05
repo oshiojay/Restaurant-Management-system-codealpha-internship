@@ -38,9 +38,9 @@ exports.verifyOtpValidator = (req, res, next) => {
             'string.empty': 'Email is required',
             'any.required': 'Email is required'
         }),
-        otp: joi.string().trim().length(6).required().messages({
+        otp: joi.string().trim().pattern(/^\d{6}$/).required().messages({
             'string.empty': 'OTP is required',
-            'string.length': 'OTP must be 6 characters long',
+            'string.pattern.base': 'OTP must be a 6-digit number',
             'any.required': 'OTP is required'
         })
     })
