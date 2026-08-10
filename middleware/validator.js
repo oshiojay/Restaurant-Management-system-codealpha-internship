@@ -76,4 +76,52 @@ exports.loginValidator = (req, res, next) => {
     next()
 }
 
+exports.menuValidator = (req, res, next) => {
+    const schema = joi.object({
+        name: joi.string().trim().min(2).required().messages({
+            'string.base': 'Name must be a string',
+            'string.empty': 'Name is required',
+            'string.min': 'Name must be at least 2 characters long',
+            'any.required': 'Name is required'
+        }),
+        description: joi.string().trim().required().messages({
+            'string.empty': 'Description is required',
+            'any.required': 'Description is required'
+        }),
+        price: joi.number().positive().required().messages({
+            'number.base': 'Price must be a number',
+            'number.positive': 'Price must be greater than zero',
+            'any.required': 'Price is required'
+        })
+    })
 
+    const { error } = schema.validate(req.body)
+    if (error) {
+        return res.status(400).json({
+            message: error.details[0].message
+        })
+    }
+    next()
+}
+
+
+exports.tableValidator = (req, res, next) => {
+    const schema = joi.object({
+        tableNumber: joi.number().required().messages({
+            'number.empty': 'Table number is required',
+            'any.required': 'Table number is required'
+        }),
+        capacity: joi.number().required().messages({
+            'number.empty': 'Capacity is required',
+            'any.required': 'Capacity is required'
+        })
+    })
+
+    const { error } = schema.validate(req.body)
+    if (error) {
+        return res.status(400).json({
+            message: error.details[0].message
+        })
+    }
+    next()
+}
