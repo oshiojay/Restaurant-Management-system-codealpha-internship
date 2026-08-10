@@ -6,7 +6,7 @@ exports.createMenu = async (req, res) => {
         const newMenu = new menuModel({
             name,
             description,
-            price
+            price: `₦${price}`
         })
 
         await newMenu.save()

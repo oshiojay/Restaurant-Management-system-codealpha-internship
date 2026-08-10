@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { createMenu } = require('../controller/menu')
-const {} = require('../middleware/validator')
+const {menuValidator} = require('../middleware/validator')
 
-router.post('/', createMenu)
+router.post('/', menuValidator, createMenu)
 
 module.exports = router
