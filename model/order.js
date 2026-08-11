@@ -22,7 +22,7 @@ const orderSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
-})
+}, {timestamps: true})
 
 const orderModel = mongoose.model('Order', orderSchema)
 

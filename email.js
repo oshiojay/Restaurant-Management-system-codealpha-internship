@@ -29,7 +29,7 @@ style="max-width:500px; border-radius:12px; overflow:hidden;">
                 font-weight:bold;
                 letter-spacing:1px;
             ">
-                Event Management System
+                Restaurant Management
             </h1>
 
         </td>
@@ -124,7 +124,7 @@ style="max-width:500px; border-radius:12px; overflow:hidden;">
             </p>
 
             <p style="margin:10px 0 0;">
-                PRIMEPRESS Team
+                Restaurant Management Team
             </p>
 
         </td>
@@ -148,7 +148,7 @@ exports.resetPasswordTemplate = (data)=> {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Your Event Management System Password</title>
+    <title>Reset Your Restaurant Management Password</title>
     <style>
         /* Mobile Styles */
         @media screen and (max-width: 600px) {
@@ -169,7 +169,7 @@ exports.resetPasswordTemplate = (data)=> {
                         <!-- Brand Header -->
                         <tr>
                             <td align="center" style="padding: 30px 20px; background-color: #ffffff; border-bottom: 1px solid #eeeeee;">
-                                <h1 style="margin: 0; color: #00d2ff; font-size: 24px; font-weight: 800; letter-spacing: 1px;">Event Management System</h1>
+                                <h1 style="margin: 0; color: #00d2ff; font-size: 24px; font-weight: 800; letter-spacing: 1px;">Restaurant Management</h1>
                             </td>
                         </tr>
 
@@ -198,7 +198,7 @@ exports.resetPasswordTemplate = (data)=> {
                         <!-- Footer -->
                         <tr>
                             <td align="center" style="padding: 25px; background-color: #fafafa; font-size: 12px; color: #aaaaaa;">
-                                <p style="margin: 0;">&copy; 2026 Event Management System. All rights reserved.</p>
+                                <p style="margin: 0;">&copy; 2026 Restaurant Management. All rights reserved.</p>
                                 <p style="margin: 8px 0 0;">
                                     <a href="#" style="color: #00d2ff; text-decoration: none;">Help Center</a> • 
                                     <a href="#" style="color: #00d2ff; text-decoration: none;">Security Tips</a>
@@ -242,7 +242,7 @@ exports.resetPasswordSuccessfulTemplate = (name)=> {
                         <!-- Header -->
                         <tr>
                             <td align="center" style="padding: 30px 20px; background-color: #ffffff; border-bottom: 1px solid #eeeeee;">
-                                <h1 style="margin: 0; color: #00d2ff; font-size: 24px; font-weight: 800; letter-spacing: 1px;">PRIMEPRESS LAUNDRY</h1>
+                                <h1 style="margin: 0; color: #00d2ff; font-size: 24px; font-weight: 800; letter-spacing: 1px;">Restaurant Management</h1>
                             </td>
                         </tr>
 
@@ -254,12 +254,12 @@ exports.resetPasswordSuccessfulTemplate = (name)=> {
                                 
                                 <h2 style="margin: 0 0 15px; font-size: 22px; font-weight: 700; color: #1a1a1a;">Password Reset Successful</h2>
                                 <p style="font-size: 16px; line-height: 1.5; margin: 0 0 30px; color: #666666;">
-                                    Hi ${name}, your password for <strong>PRIMEPRESS LAUNDRY</strong> has been successfully updated. You can now log back into your account using your new credentials.
+                                    Hi ${name}, your password for <strong>Restaurant Management</strong> has been successfully updated. You can now log back into your account using your new credentials.
                                 </p>
                                 
                                 <!-- CTA Button -->
                                 <a href="https://primepresslaundry.com" class="cta-button" style="display: inline-block; background-color: #00d2ff; color: #ffffff; padding: 16px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px;">
-                                    Log in to PRIMEPRESS LAUNDRY
+                                    Log in to Restaurant Management
                                 </a>
 
                                 <!-- Security Warning -->
@@ -272,7 +272,7 @@ exports.resetPasswordSuccessfulTemplate = (name)=> {
                         <!-- Footer -->
                         <tr>
                             <td align="center" style="padding: 25px; background-color: #fafafa; font-size: 12px; color: #aaaaaa;">
-                                <p style="margin: 0;">&copy; 2026 PRIMEPRESS LAUNDRY App. All rights reserved.</p>
+                                <p style="margin: 0;">&copy; 2026 Restaurant Management. All rights reserved.</p>
                                 <p style="margin: 8px 0 0;">
                                     <a href="#" style="color: #00d2ff; text-decoration: none;">Security Settings</a> • 
                                     <a href="#" style="color: #00d2ff; text-decoration: none;">Contact Support</a>
@@ -334,7 +334,7 @@ exports.sendOTPEmail = (name, otp) => {
                             <td align="center"
                                 style="padding:30px 20px; background-color:#ffffff; border-bottom:1px solid #eeeeee;">
                                 <h1 style="margin:0; color:#00d2ff; font-size:24px; font-weight:800; letter-spacing:1px;">
-                                    Event Management System
+                                    Restaurant Management
                                 </h1>
                             </td>
                         </tr>
@@ -389,7 +389,7 @@ exports.sendOTPEmail = (name, otp) => {
                                 </p>
 
                                 <p style="margin:15px 0 0; font-weight:bold;">
-                                    Event Management System Team
+                                    Restaurant Management Team
                                 </p>
 
                             </td>
