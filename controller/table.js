@@ -54,7 +54,9 @@ exports.getAllTables = async (req, res) => {
     try {
         const tables = await tableModel.find()
         res.status(200).json({
-            message: "Tables found successfully"
+            message: "Tables found successfully",
+            data: tables,
+            count: tables.length
         })
     } catch (error) {
         console.log(error.message)
@@ -64,14 +66,3 @@ exports.getAllTables = async (req, res) => {
     }
 }
 
-
-exports.updateTable = async (req, res) => {
-    try{
-
-    } catch (error) {
-        console.log(error.message)
-        res.status(500).json({
-            message: "Something went wrong"
-        })
-    }
-}

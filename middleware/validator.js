@@ -125,3 +125,56 @@ exports.tableValidator = (req, res, next) => {
     }
     next()
 }
+
+
+exports.inventoryValidator = (req, res, next) => {
+    const schema = joi.object({
+        ingredient: joi.string().trim().min(2).required().messages({
+            'string.base': 'Ingredient must be a string',
+            'string.empty': 'Ingredient is required',
+            'string.min': 'Ingredient must be at least 2 characters long',
+            'any.required': 'Ingredient is required'
+        }),
+        quantity: joi.number().min(0).required().messages({
+            'number.base': 'Quantity must be a number',
+            'number.min': 'Quantity cannot be negative',
+            'any.required': 'Quantity is required'
+        }),
+        unit: joi.string().trim().required().messages({
+            'string.empty': 'Unit is required',
+            'any.required': 'Unit is required'
+        }),
+        minimumStock: joi.number().min(0).messages({
+            'number.base': 'Minimum stock must be a number',
+            'number.min': 'Minimum stock cannot be negative'
+        })
+    })
+
+    const { error } = schema.validate(req.body)
+    if (error) {
+        return res.status(400).json({
+            message: error.details[0].message
+        })
+    }
+    next()
+}
+
+
+exports.reservationValidator = (req, res, next) => {
+    const schema = joi.object({
+        numberOfGuests: joi.number().min(1).required().messages({
+            'number.base': 'Number of guests must be a number',
+            'number.min': 'Number of guests must be at least 1',
+            'any.required': 'Number of guests is required'
+        })
+    })
+
+    const { error } = schema.validate(req.body)
+    if (error) {
+        return res.status(400).json({
+            message: error.details[0].message
+        })
+    }
+    next()
+}
+
