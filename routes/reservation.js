@@ -1,8 +1,10 @@
 const routes = require('express').Router()
-const {createReservation} = require('../controller/reservation')
-const {authenticate} = require('../middleware/auth')
-const {} = require('../middleware/validator')
+const {createReservation, getOneReservation, getAllReservations} = require('../controller/reservation')
+const {authenticate, userAuth} = require('../middleware/auth')
+const {reservationValidator} = require('../middleware/validator')
 
-routes.post('/ ', createReservation)
+routes.post('/create/:tableId', authenticate, userAuth, reservationValidator, createReservation)
+routes.get('/getOne/:reservationId', getOneReservation)
+routes.get('/getAll', getAllReservations)
 
 module.exports = routes

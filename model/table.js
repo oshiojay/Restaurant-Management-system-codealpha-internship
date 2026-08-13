@@ -12,7 +12,7 @@ const tableSchema = new Schema({
     },
      status: {
       type: String,
-      enum: ["available", "occupied", "reserved"],
+      enum: ["available", , "reserved"],
       default: "available",
     },
 }, {timestamps: true})

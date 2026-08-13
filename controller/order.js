@@ -43,3 +43,41 @@ exports.makeOrder = async (req, res) => {
         })
     }
 }
+
+exports.getOneOrder = async (req, res) => {
+    try {
+        const {orderId} = req.params
+        const order = await orderModel.findOne({_id: orderId})
+        if (!order) {
+            return res.status(404).json({
+                message: "Order not found"
+            })
+        }
+        res.status(200).json({
+            message: "Order found",
+            data: order
+        })
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).json({
+            message: "Something went wrong"
+        })
+    }
+}
+
+
+exports.getAllOrders = async (req, res) => {
+    try {
+        const orders = await orderModel.find()
+        res.status(200).json({
+            message: "Orders found successfully",
+            count: orders.length,
+            data: orders
+        })
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).json({
+            message: "Something went wrong"
+        })
+    }
+}

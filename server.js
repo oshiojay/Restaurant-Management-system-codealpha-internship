@@ -8,6 +8,7 @@ const menuRoutes = require('./routes/menu')
 const tableRoutes = require('./routes/table')
 const orderRoutes = require('./routes/order')
 const reservationRoutes = require('./routes/reservation')
+const inventoryRoutes = require('./routes/inventory')
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.use('/api/v1/menu', menuRoutes)
 app.use('/api/v1/table', tableRoutes)
 app.use('/api/v1/order', orderRoutes)
 app.use('/api/v1/reservation', reservationRoutes)
+app.use('/api/v1/inventory', inventoryRoutes)
 
 const mongoose = require('mongoose')
 
